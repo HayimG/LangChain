@@ -34,14 +34,24 @@ export default async function Index() {
 
       <div className="flex max-w-4xl flex-1 flex-col gap-20 px-3">
         <Header />
-        <main className="flex flex-1 flex-col gap-6">
+
+
+       <main className="flex flex-1 flex-col gap-6">
   <h2 className="mb-4 text-4xl font-bold">Your AI Flow Builder</h2>
-  <iframe
-    src="https://flowiseai-railway-production-378e.up.railway.app/"
-    style={{ width: '100%', height: '80vh', border: '1px solid #ccc', borderRadius: '8px' }}
-    title="Flowise"
-  />
+
+  {isSupabaseConnected ? (
+    <iframe
+      src="https://flowiseai-railway-production-378e.up.railway.app/"
+      style={{ width: '100%', height: '85vh', border: '1px solid #ccc', borderRadius: '12px' }}
+      title="Flowise"
+    />
+  ) : (
+    <p className="text-lg text-center text-gray-500">
+      Please log in to access the flow builder.
+    </p>
+  )}
 </main>
+
 
       </div>
 
