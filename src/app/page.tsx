@@ -7,6 +7,8 @@ import { createServerClient } from '@/utils/supabase'
 import ThemeToggle from '@/components/ThemeToggle'
 
 export default async function Index() {
+
+  
   const cookieStore = cookies()
 
   const canInitSupabaseClient = () => {
@@ -33,9 +35,14 @@ export default async function Index() {
       <div className="flex max-w-4xl flex-1 flex-col gap-20 px-3">
         <Header />
         <main className="flex flex-1 flex-col gap-6">
-          <h2 className="mb-4 text-4xl font-bold">Next steps</h2>
-          {isSupabaseConnected ? <SignUpUserSteps /> : <ConnectSupabaseSteps />}
-        </main>
+  <h2 className="mb-4 text-4xl font-bold">Your AI Flow Builder</h2>
+  <iframe
+    src="https://flowiseai-railway-production-378e.up.railway.app/"
+    style={{ width: '100%', height: '80vh', border: '1px solid #ccc', borderRadius: '8px' }}
+    title="Flowise"
+  />
+</main>
+
       </div>
 
       <footer className="w-full justify-center border-t border-t-foreground/10 p-8 text-center text-xs">
